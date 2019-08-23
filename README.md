@@ -168,6 +168,12 @@ In order to contribute you can
 
 ## Recent History
 
+__2.7.1__
+* Fix bug in `transactionBuilder.applyForSR` using the default address all the time
+
+__2.7.0
+* Workaround for unsupported trcToken type in ABI decoder
+
 __2.6.8__
 * Support extension of transaction expiration
 * Allow to add data to the transaction
