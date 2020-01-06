@@ -4,8 +4,6 @@
 
 // See: https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI
 import constants from './constants';
-// import BN from 'bn.js';
-// import BigNumber from './BNWrapper.js';
 import {bigNumberify} from './BNWrapper.js';
 
 import {
@@ -24,13 +22,6 @@ import {
     shallowCopy
 } from './ethersUtils';
 
-
-// const bigNumberify = function (value) {
-//     if (BigNumber.isBigNumber(value)) {
-//         return value;
-//     }
-//     return new BigNumber(value);
-// }
 
 
 var __extends = (this && this.__extends) || (function () {
