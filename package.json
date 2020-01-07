@@ -13,7 +13,8 @@
         "test-no-accounts": "node scripts/test-node.js && npx mocha 'test/**/*.test.js' --exit",
         "test:browser": "npm run-script newaccount && node scripts/test-browser.js && npx karma start --single-run --browsers ChromeHeadless",
         "coverage": "npm run-script test:browser && npm run-script test --exit",
-        "btest": "npm run build:dev && npm run test --exit"
+        "btest": "npm run build:dev && npm run test --exit",
+        "reinstall": "rm -rf node_modules && npm i"
     },
     "husky": {
         "hooks": {
