@@ -6,30 +6,19 @@ import injectpromise from 'injectpromise';
 
 function resultManager(events, options = {}, callback) {
 
-    let data
-    let meta
     if (!events)
         return callback('Unknown error occurred');
 
     if (utils.isArray(events)) {
-        data = events;
-    } else {
-        if (events && events.data) {
-            meta = events.meta
-            data = events.data
-        } else
-            return callback(events);
-    }
-    let response = options.trongridCompatible
-        ? {
-            data: options.rawResponse === true ? data : data.map(event => utils.mapEvent(event)),
-            meta
-        }
-        : data
-
-    // console.log(response)
-
-    return callback(null, response);
+        return callback(null,
+            options.rawResponse === true
+                ? events
+                : events.map(event => utils.mapEvent(event))
+        )
+    } else if (events.data) {
+        return callback(null, events)
+    } else
+        return callback(events);
 }
 
 export default class Event {
