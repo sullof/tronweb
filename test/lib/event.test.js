@@ -279,6 +279,8 @@ describe('TronWeb.lib.event', async function () {
 
                 events = events.data //[events.data.length -1]
 
+                jlog(events)
+
                 const event = events[events.length - 1]
 
                 assert.equal(event.result._receiver.substring(2), accounts.hex[4].substring(2))

@@ -51,8 +51,11 @@ export default class TronWeb extends EventEmitter {
         if (utils.isString(eventServer))
             eventServer = new providers.HttpProvider(eventServer);
 
-        if (options.trongridCompatible || (fullNode === solidityNode && fullNode === eventServer && /api.*\.trongrid\.io/.test(fullNode))) {
-            this.trongridCompatible = typeof options.trongridCompatible !== 'undefined' ? options.trongridCompatible : true
+        if (options.trongridCompatible) { //|| (fullNode === solidityNode && fullNode === eventServer && /api.*\.trongrid\.io/.test(fullNode))) {
+            this.trongridCompatible =
+                // typeof options.trongridCompatible !== 'undefined' ?
+                    options.trongridCompatible
+                    // : true
         }
 
         this.event = new Event(this);

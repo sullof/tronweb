@@ -307,17 +307,13 @@ function parseParamType(type) {
     return parseParam(type, true);
 }
 
-exports.parseParamType = parseParamType;
-
 // @TODO: Allow a second boolean to expose names
-function formatParamType(paramType) {
+export function formatParamType(paramType) {
     return getParamCoder(exports.defaultCoerceFunc, paramType).type;
 }
 
-exports.formatParamType = formatParamType;
-
 // @TODO: Allow a second boolean to expose names and modifiers
-function formatSignature(fragment) {
+export function formatSignature(fragment) {
     return fragment.name + '(' + fragment.inputs.map(function (i) {
         return formatParamType(i);
     }).join(',') + ')';

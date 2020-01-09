@@ -46,7 +46,7 @@ export default class Event {
 
     getEventsByContractAddress(contractAddress = false, options = {}, callback = false) {
 
-        options.trongridCompatible = this.tronWeb.trongridCompatible
+        options.trongridCompatible = options.trongridCompatible || this.tronWeb.trongridCompatible
 
         let {
             sinceTimestamp,
@@ -152,7 +152,7 @@ export default class Event {
 
     getEventsByTransactionID(transactionID = false, options = {}, callback = false) {
 
-        options.trongridCompatible = this.tronWeb.trongridCompatible
+        options.trongridCompatible = options.trongridCompatible || this.tronWeb.trongridCompatible
 
         if (utils.isFunction(options)) {
             callback = options;
